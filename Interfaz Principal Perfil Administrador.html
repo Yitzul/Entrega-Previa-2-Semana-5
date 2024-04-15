@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Administrador</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu {
+            float: left;
+            width: 200px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            margin-bottom: 10px;
+        }
+        .content {
+            float: right;
+            width: calc(100% - 220px); /* Restar el ancho del menú más el espacio */
+        }
+        .note-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .note-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Menú desplegable para el administrador -->
+        <div class="menu">
+            <h3>Menú</h3>
+            <ul>
+                <!-- Opción de administración de usuarios -->
+                <li class="menu-item">Administración de usuarios</li>
+                <!-- Otras opciones de menú pueden ir aquí -->
+            </ul>
+        </div>
+        <!-- Contenido principal -->
+        <div class="content">
+            <!-- Título -->
+            <h2>Bienvenido Administrador</h2>
+            <p>¡Has iniciado sesión como administrador!</p>
+            <!-- Botón de acción "Note it" -->
+            <button class="note-button">Note it</button>
+        </div>
+    </div>
+</body>
+</html>

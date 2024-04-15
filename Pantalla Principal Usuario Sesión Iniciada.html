@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz de Usuario con Sesión Iniciada</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .note-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .note-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .note-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenido Usuario</h2>
+        <p>¡Has iniciado sesión correctamente!</p>
+        <!-- Formulario para crear notas -->
+        <form id="note-form">
+            <label for="note-input">Nueva Nota:</label>
+            <textarea id="note-input" class="note-input" rows="4" required></textarea>
+            <!-- Botón para guardar la nota -->
+            <button type="submit" class="note-button">Note it</button>
+        </form>
+        <hr>
+        <!-- Área para mostrar las notas existentes -->
+        <h3>Notas Guardadas:</h3>
+        <ul id="note-list">
+            <!-- Las notas creadas se mostrarán aquí -->
+        </ul>
+    </div>
+
+    <script>
+        // Función para manejar el envío del formulario de nota
+        document.getElementById('note-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que se envíe el formulario
+            var noteInput = document.getElementById('note-input').value; // Obtener el valor del campo de entrada de nota
+
+            // Crear un nuevo elemento de lista para mostrar la nota
+            var listItem = document.createElement('li');
+            listItem.textContent = noteInput;
+
+            // Agregar la nueva nota a la lista de notas existentes
+            document.getElementById('note-list').appendChild(listItem);
+
+            // Limpiar el campo de entrada de nota después de guardar la nota
+            document.getElementById('note-input').value = '';
+        });
+    </script>
+</body>
+</html>
